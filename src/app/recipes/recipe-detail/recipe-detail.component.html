@@ -6,7 +6,11 @@
 
 <div class="row">
     <div class="col-xs-12">
-        <h1>Recipe Name</h1>
+        <div *ngIf="recipe">
+            <h1>{{recipe.name}}</h1>
+            <p>{{recipe.description}}</p>
+        </div>
+        <!-- <ng-template #Placeholder>Please click on a recipe</ng-template> -->
     </div>
 </div>
 

@@ -1,14 +1,12 @@
-<app-header></app-header>
+<app-header (active-tab)="onHeaderItemClick($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <app-recipes></app-recipes>
-    </div>
-  </div>
-<hr>
-  <div class="row">
-    <div class="col-12">
-      <app-shopping-list></app-shopping-list>
+      <app-recipes *ngIf="activePage === 'recipes'; else shoppingPage"></app-recipes>
+      <hr>
+      <ng-template #shoppingPage>
+        <app-shopping-list></app-shopping-list>
+      </ng-template>
     </div>
   </div>
 </div>
